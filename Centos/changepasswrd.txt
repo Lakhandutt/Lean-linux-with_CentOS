@@ -1,0 +1,5 @@
+1.#You should change your intial password as soon as you login
+  command: passwd userid
+  1.only root user can specify the userid or username for all user to change type only passwd
+  and if you type only passwd as root it will change root password
+  

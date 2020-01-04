@@ -1,0 +1,52 @@
+1# File system path types
+   1.Absolute path
+    begin with / eg: cd /var/log/sambha
+
+   2.Relative path
+   location Relative to your current position  not start with / except root directories 
+                                         eg: cd log if you are in /var
+
+2.#Directory listing attributes
+  eg: ls -l
+
+    Type and      No of links   owner     group    size  month   day     time      name
+    permissions   (inside links)        (owns this)
+    drwxrwxr-x        8         vagrant   vagrant    92   Dec     6      15:31    AllWork
+    -rwxr-xr-x        1         vagrant   vagrant   450   Jul     16     2015     base.sh
+    -rwxr-xr-x        1         vagrant   vagrant   118   Jul     16     2015     cleanup.sh
+
+    drwxrwxr-x => read, write and execute permissions for root, current user and group 
+ 
+3.#creating files and Directory
+    create files
+    1.touch filename1 filename2 filename3 => create an empty File or list of files
+    2. cp sourcefile destinationfile => copy a file 
+    3. vi filename=> editor  if file not exist it will create new file 
+    create directory:
+    1. mkdir directoryName : make directory
+    2. mkdir dir1 dir2 dir3 : create multiple directories
+
+4.# 7 Types of files in linux:
+   File Symbol           Meaning
+       -                 Regular file
+       d                 Directory
+       l                 links
+       c                 special file or device file:like attached keyboard file
+       s                 socket
+       p                 named pipe
+       b                 block device
+5.#find files and directories
+   1.find:
+      find . -name filename => find the file starting from the current directory(.)
+      find / -name ifcfg-enp0s3 => starting from root(/) dir using root user find network file
+        if permission denied for directory then can't search so use su - or sudo -s
+   2.locate:
+     for locate: sudo yum install mlocate
+                  sudo updatedb
+     locate filename  => find the file with locate
+6.# difference between find and locate
+    1.locate command uses a prebuilt database which should be regularly updated(command => sudo updatedb)
+    2.find iterate over filesystem to locate files does not have database.
+    thus locate is much faster than find but can be inacurate if the database is not
+    updated 
+    

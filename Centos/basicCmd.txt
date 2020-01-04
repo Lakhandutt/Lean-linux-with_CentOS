@@ -1,0 +1,22 @@
+Linux is case senstive system , avoid filename with spaces, 
+1. #for IP getting -ip and ifconfig 
+   ip addr  or ip a - find enp0s3 address for ssh ip
+
+2. for manual of a command
+   man ip
+
+3.updating su password
+  sudo passwd root
+4. checking current user
+   whoami
+   checking hostname: A hostname is a name which is given 
+   to a computer and it attached to the network.
+  Its main purpose is to uniquely identify over a network.
+   command : hostname
+5. login as root user :- super admin account
+     sudo -s
+6. login as user vagrant
+    su - vagrant  su:switch user
+7. clear: clear screen
+8. shutdown now -shutdown the system
+

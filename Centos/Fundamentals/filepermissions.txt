@@ -1,0 +1,21 @@
+# syntax of command:Command -options arguments
+
+#delete a directory: rm -r dir
+#manual of a command : man ls
+
+#3 type file permissions:rwx=read write and execute
+# three level of permissions: 1.user 2.group 3.others
+
+#run ls -l
+-rw-rw-r-- 1 vagrant(user) vagrant(group) 0 Jan  4 06:16 per
+user(u)-group(g)-others(o)
+
+#chmod 
+#remove read permission for others
+  chmod o-r per.txt
+#remove read permission for all(a)
+  chmod a-r per.txt 
+#add read write permission for user
+  chmod u+rw per.txt
+#why directory have x-executable : because we cd into directory if we remove the execute permission for u-g-o then
+#no one can cd into it 

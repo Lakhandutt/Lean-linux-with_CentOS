@@ -1,0 +1,35 @@
+1. Linux file system
+commands file: /usr/bin
+attached devices: /dev
+applications: /etc  or /var
+
+2. Linux -ext3,ext4,xfs  
+
+3. folders in linux:
+/boot-contains files that is used by boot loader (grub.cfg)
+/root- root user home directory but not same as /:- root
+/dev- system devices
+/etc- configuration files( dns, NTP,send mail) for all services
+/bin -> /usr/bin- everyday user command-like ls, pwd
+/sbin -> /usr/sbin- system/filesystem commands - extend file system
+/opt- optional add-on applications (not part of OS apps)-third party
+/proc-files os running process (only exist in memory)-empty on shutdown
+/lib-> usr/lib - c programming library files needed by commands and apps.
+             command: strace -e open pwd : used to see which c/c++ library used for pwd command
+/tmp: directory for temporary files
+/home: directory for user
+/var: system logs-find info about specific applications
+/run: system daemons that start very early(systemd and udev) to store temporary runtime files
+        like PID files
+/mnt: to mount external filesystem(e.g NFS)
+/media: for cdrom mounts
+
+4. Navigating file system:
+    cd-change directory (cd .. => one directory back) (only cd =>switch to current user home directory)
+    pwd-print working directory
+    ls- listing  (ls -l: long listing all details)=> -rwxr-xr-x =>start with - means file and
+                                                     drwxr-xr-x =>start with d means directory
+                                                     lrwxrwxrwx => start with l means link
+    ls -ltr => long list file sort according to time in reverse order (oldest one on the top)
+    
+

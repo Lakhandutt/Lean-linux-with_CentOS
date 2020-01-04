@@ -1,0 +1,26 @@
+# link = shortcut on windows
+#inode: Pointer or number of a file on the hard disk
+#soft link : link will be removed if file is removed or rename
+#hard link : deleting renaming and moving original file will not affect the hard link
+
+#command: $ ln (by default hard link)
+          $ ln -s  (for softlink)
+
+#example soft link:
+$ touch hulk
+$ ln -s /hulk
+$ ls -ltr  => lrwxrwxrwx 1 vagrant vagrant  5 Jan  3 20:03 hulk -> /hulk => l for link in begining
+$ cd into file directory and vi hulk and edit file
+$ ls -il => i means inode number
+$ inode for file and soft link are different
+# remove the source file and try to open the link => cat: hulk: No such file or directory
+# so link is not usable now remove it also
+
+#example hard link
+#create a file again and content in it and create a hard link for it
+$ ln /hulk
+# no pointing to other file and same content as the file
+# inode for file and hard link are same
+# if you modify the source file it modify destination also
+# if you remove the source file then the link will still exist and content of the file also exist due to inode
+

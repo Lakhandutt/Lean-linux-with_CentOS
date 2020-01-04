@@ -1,0 +1,15 @@
+#there are two owner of a file or directory: user and group
+#command to change file ownership: chown and chgrp
+
+#Recursive ownership change option= -R : change for all files or folders in the folder also
+#only root user have permissions for this
+#change owner to root of a file
+   sudo chown root per.txt
+#change group to root of a file
+   sudo chgrp root per.txt
+
+#you can delete the file of root user and group
+#because you are inside your home directory where you have rwx permissions
+
+#changing owner and group in one time
+$ sudo chown root:root file.txt

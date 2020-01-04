@@ -1,0 +1,8 @@
+#3 type
+#whatis command
+#command --help
+#man command
+
+$whatis ls
+$ls --help
+$man cd 

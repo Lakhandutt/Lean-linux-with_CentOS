@@ -1,0 +1,19 @@
+#cp
+#rm
+#mv
+#mkdir
+#rmdir or rm -r
+#chgrp //check fileownership file
+#chown //check fileownership file
+
+examples:
+$cp source.txt dest.txt
+$rm filename
+#mv rename also
+$mv source.txt dest.txt
+#move to temp
+$mv sourc.txt /tmp 
+$ mkdir mydirectory
+$rmdir mydirectory #remove directory
+$ rm -r mydirectory #remove directory
+$rm -rf option forcefully remove sub-directories and its content

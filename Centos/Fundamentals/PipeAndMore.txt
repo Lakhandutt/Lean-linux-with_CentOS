@@ -1,0 +1,10 @@
+#pipe(|) used to give output to next command
+# more is used for one page output of a command
+
+example:
+$touch file{1..200}.txt  // creates 200 files
+
+$ ls -l | more //read with pager
+
+#ll is same as ls -l
+$ ll | tail -1 //read last line of command

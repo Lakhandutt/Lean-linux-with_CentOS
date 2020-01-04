@@ -1,0 +1,36 @@
+#3 ways
+#vi
+#redirect command output > or >>
+#echo > or >>
+
+example: echo
+$echo "hi my name is lakhan" //it output back the argument
+$echo "hi my name is lakhan" > lakhan.txt  //input it into file
+#if we use > it will crete a new file for appending we use >>
+$echo "write on next line" >> lakhan.txt 
+
+example: redirect
+#save output of command in the file
+$ ls -ltr > lsout.txt
+$ ls -ltr >> lsout.txt // append to file
+
+example: vi
+$ vi file.txt : i to insert ,esc to command mode , :wq to write quit
+
+#Tee command:(plumbers T) used to store and view command output(standard output) at same time
+$ echo "hi this is text with tee" | tee file.txt
+#if use again it will create again the file
+$echo "hi this is text with tee again" | tee file.txt
+# for append use option -a 
+$ echo "hi this is text with tee append" | tee -a file.txt
+#writing to multiple files
+$echo "hi this is text with tee append" | tee file1.txt file2.txt file3.txt
+#check version and its open source like linux
+$ tee --version
+
+#counting character of a file
+$ wc -c text.txt 
+$ wc file.txt : 2(lines) 14(words) 63(character) file.txt
+
+#hostname command
+
