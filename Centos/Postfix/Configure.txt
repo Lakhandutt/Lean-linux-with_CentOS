@@ -1,0 +1,46 @@
+#Add host in hosts file
+vim /etc/hosts
+
+#install postfix
+sudo yum install postfix
+
+#start postfix
+ systemctl start postfix
+
+#Enable postfix
+systemctl enable postfix
+
+#add smtp to firewall
+ firewall-cmd --permanent --add-service=smtp
+
+#Configure main.cf 
+vi /etc/postfix/main.cf 
+
+#restart postfix
+systemctl restart postfix
+
+#check postfix status
+ systemctl status postfix
+
+#check mailq
+mailq
+
+#check system logs
+ journalctl -xn
+
+#check postfix conf 
+ postconf -n
+
+#install mail
+yum -y install mailx
+
+#send mail (subject => message=> end with .)
+mail -S "hai" "lakhandutta23@gmail.com" 
+mail -S "hai" vagrant@localhost.none  # for localhost testing
+
+
+#check disk usage of postfix in var
+du -sh *
+
+#check deffered message in /var/spool/postfix/deferred
+cd /var/spool/postfix/deferred  #here all the messages stored in the folders

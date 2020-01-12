@@ -1,0 +1,36 @@
+SMTP: Simple mail transfer protocol
+It is the Protocol that defines MTA client and server in the internet.
+SMTP uses commands and responses to transfermessage between an MTA client and server.
+SMTP receives the mail from sender and forward it to client server
+
+#SMTP codes: connection establishment => Message transfer => connection Termination
+1.Positive condition replies:
+        211-System status
+        214:help
+        220:service Ready
+        221:service closing
+        250-ok
+2.Transient Negative Completion Reply
+    421-Service NA
+    450-Mailbox NA
+    451-command Aborted
+3.Permanent negative Completion Reply
+    500-Syntax Error
+    554-Transaction failed
+
+#Postfix: Postfix is a Open source mail transfer agent (MTA), an application used to send and receive email.
+if you are managing a cloud server on which you have installed applications that need to send
+email notifications, running a local, send-only SMTP server is a good alternative 
+to using a 3rd party email service provider or running a full-blown SMTP server.
+
+#postfix/smtpd - This is typically the SMTP daemon process for handling incoming mail 
+and routing to the appropriate internal location.
+
+#postfix/smtp - This is typically the SMTP daemon process for delivering mail out to the world.
+If you're seeing alot of postfix/smtp log entries, these would be all of the SMTP connections
+sending spam out to other nodes.
+
+
+"Deferred" means that Postfix tried to deliver the message but failed 
+(in this case because the MX server rejected the SMTP connection), and
+ so it is going to wait a while and try to deliver it later

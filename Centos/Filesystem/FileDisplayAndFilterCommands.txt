@@ -1,0 +1,36 @@
+#File display Commands:
+    1.cat=cat filename
+    2.more=more filename #space=next page, enter=line by line
+    3.less=less filename #up and down arrow key for reading
+    4.head=head -2 filename # show first 2 lines of file
+    5.tail=tail -3 filename # show last 3 lines
+    
+#File Filter Commands
+    1.cut => examples:
+    cut -c1 var/log/messages  #display first character in all lines 
+    cut -c1 var/log/messages  #display second character in all lines 
+    cut -c1-10 var/log/messages #display 1-10 character in all lines 
+
+    2.awk => it is a text processing language(google for more details) => examples
+    awk '{print $2}' var/log/messages # print 2nd word in all lines
+    awk '{print $4}' var/log/messages # print 4th word in all lines
+    awk '{print $2*2}' var/log/messages # take 2nd(intiger here) from every line and multiply by 2.
+    awk '{print $2,$4}' var/log/messages #print second and forth word in each line
+
+  
+    3.grep =>
+      grep localhost var/log/messages | grep root 
+      # this will grep all lines contains localhost in var/log/messages file 
+      #then all lines containing root from the filtered lines.
+
+    4.sort => sort filename.txt # alphabatically sort the file
+        sort -r filename.txt #sort in reverse order
+
+    5.uniq #print unique lines 
+    # mostly used with sort
+         sort -r sortfile.txt | uniq     # print uniq lines from sorted file
+    6.wc example: wq filename.txt
+    #output (no of lines) (No of words) (filesize in bytes)
+            $ sort -r sortfile.txt | uniq | wc      #print word count for uniq lines from sorted file
+            $ wq -l filename.txt # print no of lines of the file
+            

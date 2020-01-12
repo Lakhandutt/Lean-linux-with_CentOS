@@ -1,0 +1,4 @@
+#diff (line by line)
+diff filename1 filename2
+#cmp (byte by byte)
+cmp filename1 filename2

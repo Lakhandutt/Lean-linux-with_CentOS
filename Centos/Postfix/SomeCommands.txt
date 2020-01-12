@@ -1,0 +1,45 @@
+# cd into var directory and run => (du -sh *) to check disk usage of each directory.
+[root@lakhanmail var]# du -sh *
+91M    cache
+8.0K    db
+32M    lib
+1.1G    log // all logs related to mails and system 
+2.0G    spool //mail that planed to send 
+
+#check all disk filesystem
+sudo df -Th
+
+#list block devices
+lsblk
+
+#ssh via private key
+ssh -i key.pem username@ipaddr
+
+# check host file for server details:
+cat /etc/hosts
+
+#check status of postfix
+systemctl status postfix
+
+#configuration file for SMTP
+cat /etc/postfix/main.cf | more
+
+#check postfix configurations
+postconf -n
+
+#check system logs:
+journalctl -r | grep "Jan 12 03:17"
+
+#check logs for a particular date and error
+cat maillog | grep "March  23 " | grep " refused to talk to me: 554 Blocked"
+
+#read mail of a user
+vim /var/mail/user1
+
+#send mail to a user
+mail -S "Hello" Lakhandutta23@gmail.com
+
+#check all mails of current user
+mail
+
+
